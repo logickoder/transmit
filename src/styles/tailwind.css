@@ -1,0 +1,24 @@
+/* Global styles, themes, or utility classes */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+    .text-decorated {
+        background: -webkit-linear-gradient(theme('colors.gradient.start'), theme('colors.gradient.stop'));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@layer utilities {
+    ::-webkit-scrollbar-track {
+        background: theme('colors.neutral.30');
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: theme('colors.neutral.50');
+    }
+}
