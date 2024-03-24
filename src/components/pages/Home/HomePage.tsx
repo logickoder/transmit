@@ -1,6 +1,5 @@
-import Navigation from "../../organisms/HomeNavBar";
+import NavigationBar from "../../organisms/NavigationBar.tsx";
 import HomeGetSection from "./HomeGetSection.tsx";
-import HomeInitiative from "./HomeInitiative.tsx";
 import HomeWhySection from "./HomeWhySection.tsx";
 import HomeWhatSection from "./HomeWhatSection.tsx";
 import HomeWhatNextSection from "./HomeWhatNextSection.tsx";
@@ -9,9 +8,8 @@ import Footer from "../../organisms/Footer.tsx";
 export default function HomePage() {
     return (
         <div>
-            <Navigation currentScreen="Home"/>
+            <NavigationBar/>
             <HomeGetSection/>
-            <HomeInitiative/>
             <HomeWhySection/>
             <HomeWhatSection/>
             <HomeWhatNextSection/>

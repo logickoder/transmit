@@ -1,13 +1,13 @@
 import RegisterForm from "./RegisterForm";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
-import Navigation from "../../organisms/HomeNavBar";
+import NavigationBar from "../../organisms/NavigationBar.tsx";
 
 
 export default function SignUpAuthPage() {
   return (
     <>
-    <Navigation />
+    <NavigationBar />
     <div className="bg-neutral-20 pt-16 pb-16 flex flex-col">
       <div className="flex flex-col gap-8 items-center pb-10">
         <div className="flex gap-3 items-center max-w-fit">

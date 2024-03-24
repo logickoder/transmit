@@ -1,10 +1,10 @@
 import Footer from "../../organisms/Footer";
-import Navigation from "../../organisms/HomeNavBar";
+import NavigationBar from "../../organisms/NavigationBar.tsx";
 
 export default function AboutPage() {
     return (
         <>
-            <Navigation currentScreen="About Us"/>
+            <NavigationBar currentScreen="About Us"/>
             <div
                 className="py-8 px-44 bg-[#FAFBFC] pt-20 flex flex-col max-[1200px]:px-20 max-[800px]:px-10"
             >
