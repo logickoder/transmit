@@ -10,7 +10,7 @@ export function DropdownField(
 ) {
     const id = label.toLowerCase().replace(" ", "-");
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
             <label htmlFor={id} className="text-caption text-neutral-900">
                 {label}
             </label>
@@ -18,7 +18,7 @@ export function DropdownField(
                 id={id}
                 value={value}
                 onChange={(e) => onChange ? onChange(e.target.value) : undefined}
-                className="border border-neutral-50 rounded-md w-full outline-none px-4 py-3 max-w-md text-base font-normal text-neutral-300 focus:outline-none focus:border focus:border-purple-400"
+                className={inputStyle}
             >
                 {options.map((option) => (
                     <option key={option} value={option}>
@@ -30,67 +30,40 @@ export function DropdownField(
     );
 }
 
-export function FormField(
-    {
-        label,
-        type = "text",
-        placeholder = undefined,
-        value,
-        onChange,
-        required = true,
-    }: FormFieldProps
-) {
-    const id = label.toLowerCase().replace(" ", "-");
+export function FormField(props: FormFieldProps) {
+    const id = props.label.toLowerCase().replace(" ", "-");
     return (
         <div className="flex flex-col">
             <label htmlFor={id} className="text-caption text-neutral-900">
-                {label}
+                {props.label}
             </label>
             <InputField
+                {...props}
                 id={id}
-                type={type}
-                placeholder={placeholder}
-                value={value}
-                onChange={(e) => onChange ? onChange(e.target.value) : undefined}
-                required={required}
+                onChange={(e) => props.onChange ? props.onChange(e.target.value) : undefined}
             />
         </div>
     );
 }
 
-export default function InputField(
-    {
-        value,
-        type,
-        onChange,
-        placeholder,
-        id,
-        required,
-    }: InputProps
-) {
+export default function InputField(props: InputProps) {
+    const required = props.required ?? true;
     return (
         <input
-            className="border border-neutral-50 rounded-md w-full outline-none px-4 py-3 max-w-md text-base font-normal text-neutral-300 focus:outline-none focus:border focus:border-purple-400"
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-            type={type}
-            id={id}
-            name={id}
-            autoComplete={id}
+            {...props}
+            className={inputStyle}
+            value={props.value}
+            id={props.id}
+            name={props.id}
             required={required}
         />
     );
 };
 
-type InputProps = {
+interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     value: string;
-    type: "email" | "password" | "text";
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    placeholder?: string;
     id: string;
-    required?: boolean;
-};
+}
 
 type FormFieldProps = Override<Omit<InputProps, "id">, {
     onChange?: (value: string) => void
@@ -101,3 +74,5 @@ type FormFieldProps = Override<Omit<InputProps, "id">, {
 type DropdownFieldProps = Omit<FormFieldProps, "type"> & {
     options: string[]
 };
+
+const inputStyle = "border border-neutral-50 rounded-md w-full outline-none px-4 py-3 text-base font-normal text-neutral-300 focus:outline-none focus:border focus:border-purple-400"
