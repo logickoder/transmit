@@ -68,7 +68,7 @@ export default function RegisterForm() {
 										type="text"
 										value={formik.values.firstname!}
 										placeholder="First Name"
-										str="firstname"
+										id="firstname"
 										onChange={formik.handleChange}
 									/>
 									{formik.touched.firstname && formik.errors.firstname ? (
@@ -87,7 +87,7 @@ export default function RegisterForm() {
 										type="text"
 										value={formik.values.lastname!}
 										placeholder="Last Name"
-										str="lastname"
+										id="lastname"
 										onChange={formik.handleChange}
 									/>
 									{formik.touched.lastname && formik.errors.lastname ? (
@@ -104,7 +104,7 @@ export default function RegisterForm() {
 										type="email"
 										value={formik.values.email}
 										placeholder="email"
-										str="email"
+										id="email"
 										onChange={formik.handleChange}
 									/>
 									{formik.touched.email && formik.errors.email ? (
@@ -122,7 +122,7 @@ export default function RegisterForm() {
 										type="password"
 										value={formik.values.password}
 										placeholder="password"
-										str="password"
+										id="password"
 										onChange={formik.handleChange}
 									/>
 									{formik.touched.password && formik.errors.password ? (

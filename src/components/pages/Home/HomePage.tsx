@@ -1,18 +1,12 @@
 import NavigationBar from "../../organisms/NavigationBar.tsx";
-import HomeGetSection from "./HomeGetSection.tsx";
-import HomeWhySection from "./HomeWhySection.tsx";
-import HomeWhatSection from "./HomeWhatSection.tsx";
-import HomeWhatNextSection from "./HomeWhatNextSection.tsx";
 import Footer from "../../organisms/Footer.tsx";
+import TransitForm from "../../organisms/TransitForm.tsx";
 
 export default function HomePage() {
     return (
         <div>
             <NavigationBar/>
-            <HomeGetSection/>
-            <HomeWhySection/>
-            <HomeWhatSection/>
-            <HomeWhatNextSection/>
+            <TransitForm/>
             <Footer/>
         </div>
     );

@@ -29,7 +29,7 @@ const AccountPage = () => {
 						</label>
 						<InputField
 							type="text"
-							str="firstName"
+							id="firstName"
 							placeholder=""
 							value=""></InputField>
 					</div>
@@ -41,7 +41,7 @@ const AccountPage = () => {
 						</label>
 						<InputField
 							type="text"
-							str="lastName"
+							id="lastName"
 							placeholder=""
 							value=""></InputField>
 					</div>
@@ -72,7 +72,7 @@ const AccountPage = () => {
 						</label>
 						<InputField
 							type="email"
-							str="email"
+							id="email"
 							placeholder=""
 							value=""></InputField>
 					</div>
@@ -84,7 +84,7 @@ const AccountPage = () => {
 						</label>
 						<InputField
 							type="text"
-							str="lastName"
+							id="lastName"
 							placeholder=""
 							value=""></InputField>
 					</div>

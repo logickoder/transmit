@@ -73,7 +73,7 @@ export default function LoginForm() {
 									type="email"
 									value={formik.values.email}
 									placeholder="email"
-									str="email"
+									id="email"
 									onChange={formik.handleChange}
 								/>
 							</div>
@@ -88,7 +88,7 @@ export default function LoginForm() {
 									type="password"
 									value={formik.values.password}
 									placeholder="password"
-									str="password"
+									id="password"
 									onChange={formik.handleChange}
 								/>
 								{formik.touched.password && formik.errors.password ? (
